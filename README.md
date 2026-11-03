@@ -1,4 +1,4 @@
-# Piroma
+s# Piroma
 
 Meet Piroma: your Discord server's behind-the-scenes teammate. It helps keep a community welcoming, organized, and easier to run, so moderators can spend less time on repetitive tasks and more time with their members.
 
@@ -19,3 +19,9 @@ Browse the [commands](./commands.html) and [features](./features.html), or check
 ## About this repository
 
 This repository contains Piroma's website and live status and owner-dashboard services. The bot itself runs separately; this site describes the bot and provides its public-facing web tools.
+
+## Admin site setup
+
+The admin page and public site read settings from the `public.site_settings` table in Supabase. To create it, run [`backend/migrations/002_site_settings.sql`](backend/migrations/002_site_settings.sql) in the Supabase SQL Editor for the project configured in `js/site-data.js`.
+
+The migration seeds the public settings row and permits public reads. Updates are restricted by row-level security to authenticated users whose `app_metadata.role` is `admin`. Set that app metadata on the admin account in Supabase before signing in. If the table was just created and the page still reports it is missing, refresh the Supabase API schema cache or wait briefly for it to reload.
