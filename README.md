@@ -1,4 +1,4 @@
-# Piromaorg.github.io
+# Piromaxyz.github.io
 
 ## Private site administration
 
