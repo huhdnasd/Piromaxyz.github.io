@@ -884,6 +884,99 @@ ul {
     color: #fca5a5;
 }
 
+.live-bot-panel > h2 {
+    margin-bottom: 20px;
+}
+
+.live-bot-metrics {
+    margin: 20px 0 28px;
+}
+
+.live-bot-metrics h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.live-bot-metrics p {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.live-server-list,
+.private-log-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.live-server-list li,
+.private-log-list li {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: rgba(9, 17, 27, 0.55);
+}
+
+.live-server-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.live-bot-last-seen {
+    margin-top: 18px;
+    font-size: 0.9rem;
+}
+
+.bot-admin-shell {
+    width: min(1000px, calc(100% - 32px));
+}
+
+.bot-admin-dashboard {
+    display: grid;
+    gap: 20px;
+}
+
+.bot-admin-dashboard[hidden] {
+    display: none;
+}
+
+.bot-admin-dashboard form {
+    display: grid;
+    gap: 12px;
+}
+
+.bot-admin-dashboard input,
+.bot-admin-dashboard select,
+.bot-admin-dashboard textarea {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 12px;
+    color: var(--text);
+    background: rgba(9, 17, 27, 0.8);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font: inherit;
+}
+
+.bot-admin-dashboard textarea {
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.bot-admin-dashboard button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+.private-log-list li small {
+    color: var(--secondary);
+}
+
+.private-log-list li p {
+    overflow-wrap: anywhere;
+}
+
 .save-admin {
     justify-self: start;
     border: 0;

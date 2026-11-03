@@ -5,4 +5,4 @@ Expires: 2028-01-01T00:00:00Z
 Preferred-Languages: en
 
 Canonical:
-https://piromaorg.github.io/.well-known/security.txt
+https://piroma.xyz/.well-known/security.txt

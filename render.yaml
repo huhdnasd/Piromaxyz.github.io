@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: piroma-bot-dashboard-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PUBLIC_ORIGIN
+        value: https://piroma.xyz
+      - key: API_PUBLIC_URL
+        sync: false
+      - key: DISCORD_CLIENT_ID
+        sync: false
+      - key: DISCORD_CLIENT_SECRET
+        sync: false
+      - key: OWNER_DISCORD_ID
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: BOT_CONNECTION_SECRET
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: APPROVED_GUILD_IDS
+        sync: false
+      - key: BOT_ALLOWED_COMMANDS
+        sync: false
+      - key: BOT_LOG_RETENTION_DAYS
+        value: "30"
+      - key: BOT_COMMAND_RETENTION_DAYS
+        value: "90"

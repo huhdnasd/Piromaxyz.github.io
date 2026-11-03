@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Bot Admin | Piroma</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/bot-admin.js"></script>
+</head>
+<body>
+<main class="admin-shell bot-admin-shell">
+  <div class="admin-heading">
+    <a class="admin-home" href="index.html">Piroma /</a>
+    <span class="eyebrow">Owner only</span>
+    <h1>Bot administration</h1>
+    <p>Discord OAuth verifies the configured owner account on the server. Bot data is never returned to public pages.</p>
+  </div>
+
+  <p id="bot-admin-message" class="admin-message" role="status" aria-live="polite"></p>
+
+  <section id="bot-admin-login" class="admin-panel">
+    <h2>Owner sign in</h2>
+    <p>Only the Discord account whose ID is configured in the backend can access private bot data.</p>
+    <a id="bot-discord-login" class="btn primary" href="#">Continue with Discord</a>
+  </section>
+
+  <section id="bot-admin-dashboard" class="bot-admin-dashboard" hidden>
+    <div class="admin-panel-heading">
+      <p id="bot-admin-user"></p>
+      <button id="bot-admin-logout" class="btn secondary" type="button">Sign out</button>
+    </div>
+
+    <section class="admin-panel">
+      <h2>Bot settings</h2>
+      <p>Settings are private JSON delivered to the bot after it connects. Do not put tokens, passwords, API keys, or other secrets here.</p>
+      <form id="bot-settings-form">
+        <label for="bot-settings">Settings JSON</label>
+        <textarea id="bot-settings" rows="12" spellcheck="false" required>{}</textarea>
+        <button class="btn primary" type="submit">Save settings</button>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <h2>Execute an approved bot command</h2>
+      <p>Only names explicitly enabled in the backend and implemented by your bot are accepted. Arguments must be a JSON object.</p>
+      <form id="bot-command-form">
+        <label for="bot-command">Command</label>
+        <select id="bot-command"></select>
+        <label for="bot-command-arguments">Arguments JSON</label>
+        <textarea id="bot-command-arguments" rows="5" spellcheck="false">{}</textarea>
+        <button id="bot-run-command" class="btn primary" type="submit" disabled>Run command</button>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <div class="admin-panel-heading">
+        <h2>Private bot logs</h2>
+        <button id="bot-refresh-logs" class="btn secondary" type="button">Refresh logs</button>
+      </div>
+      <ul id="bot-private-logs" class="private-log-list"></ul>
+    </section>
+  </section>
+</main>
+</body>
+</html>

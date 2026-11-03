@@ -4,23 +4,27 @@
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://piromaorg.github.io/</loc>
+<loc>https://piroma.xyz/</loc>
 </url>
 
 <url>
-<loc>https://piromaorg.github.io/about.html</loc>
+<loc>https://piroma.xyz/about.html</loc>
 </url>
 
 <url>
-<loc>https://piromaorg.github.io/features.html</loc>
+<loc>https://piroma.xyz/features.html</loc>
 </url>
 
 <url>
-<loc>https://piromaorg.github.io/commands.html</loc>
+<loc>https://piroma.xyz/commands.html</loc>
 </url>
 
 <url>
-<loc>https://piromaorg.github.io/support.html</loc>
+<loc>https://piroma.xyz/support.html</loc>
+</url>
+
+<url>
+<loc>https://piroma.xyz/status.html</loc>
 </url>
 
 </urlset>

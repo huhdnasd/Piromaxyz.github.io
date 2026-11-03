@@ -6,6 +6,7 @@
 <title>Piroma Status</title>
 <link rel="stylesheet" href="css/style.css">
 <script type="module" src="js/public-content.js"></script>
+<script type="module" src="js/bot-status.js"></script>
 </head>
 <body>
 
@@ -41,6 +42,36 @@
 
   <section class="content-section">
     <div class="container">
+      <div class="content-panel live-bot-panel">
+        <span class="eyebrow">Live bot dashboard</span>
+        <h2>Discord bot status</h2>
+        <div class="status-grid live-bot-metrics">
+          <div class="status-card offline">
+            <h3>Connection</h3>
+            <p id="live-bot-status" aria-live="polite">Loading…</p>
+          </div>
+          <div class="status-card">
+            <h3>Current uptime</h3>
+            <p id="live-bot-uptime">—</p>
+          </div>
+          <div class="status-card">
+            <h3>Approved server members</h3>
+            <p id="live-approved-members">—</p>
+          </div>
+        </div>
+        <h3>Approved servers</h3>
+        <ul id="live-approved-servers" class="live-server-list" aria-live="polite">
+          <li>Loading approved server counts…</li>
+        </ul>
+        <p id="live-bot-last-seen" class="live-bot-last-seen">Waiting for live status.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>Published website service settings</h2>
+      <p>These site-maintained values remain separate from the live bot dashboard above.</p>
       <div class="status-grid">
         <div class="status-card online">
           <h2>Bot</h2>

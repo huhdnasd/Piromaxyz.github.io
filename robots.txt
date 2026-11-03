@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /bot-admin.html
 
 Sitemap:
-https://piromaorg.github.io/sitemap.xml
+https://piroma.xyz/sitemap.xml

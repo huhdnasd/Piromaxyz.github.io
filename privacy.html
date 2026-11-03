@@ -43,7 +43,7 @@ href="css/style.css">
 <h1>Privacy Policy</h1>
 
 <p>
-Last Updated: October 2026
+Last Updated: November 2026
 </p>
 
 </section>
@@ -83,6 +83,27 @@ services and features.
 Data may be stored for operational purposes,
 including moderation history, ticket support,
 logging features, and server settings.
+</p>
+
+</div>
+
+<div class="card legal-card">
+
+<h2>Live bot dashboard and owner administration</h2>
+
+<p>
+The public status page displays the bot's online/offline state, uptime,
+and server names and aggregate member counts only for servers approved
+by the Piroma operator. The private dashboard uses Discord OAuth2 to
+verify the configured owner account. The backend uses the Discord OAuth
+access token only to verify that account and does not store the token.
+It stores owner dashboard settings, command arguments and results, and
+bot logs in the configured Supabase project. Dashboard sessions use
+secure, HTTP-only cookies and expire after eight hours. Logs are
+automatically deleted after 30 days and command records after 90 days
+by default; the operator may configure these periods. Do not send
+passwords, tokens, API keys, or other credentials through bot logs,
+settings, or commands.
 </p>
 
 </div>
