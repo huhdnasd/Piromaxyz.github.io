@@ -44,73 +44,124 @@ src="js/search.js">
 <h1>Commands</h1>
 
 <p>
-Everything Piroma can do.
+Explore Piroma's verification, Roblox, server management, moderation, and utility commands.
 </p>
 
 </section>
 
-<section>
-
+<section class="container" aria-label="Piroma commands">
 <input
 id="searchInput"
 class="search-bar"
-placeholder="Search commands...">
+type="search"
+placeholder="Search commands..."
+aria-label="Search commands"
+autocomplete="off">
+<p id="noCommandResults" role="status" hidden>No commands match your search.</p>
 
-<div id="commandContainer"
-class="grid">
+<section class="command-group">
+  <h2>Verification &amp; Profiles</h2>
+  <div class="grid">
+    <article class="card command"><h3>/verify</h3><p>Verify your Discord account.</p></article>
+    <article class="card command"><h3>/verification-panel</h3><p>Create a verification panel.</p></article>
+    <article class="card command"><h3>/profile status</h3><p>View a member's verification profile.</p></article>
+    <article class="card command"><h3>/profile reset</h3><p>Reset a member's verification profile.</p></article>
+    <article class="card command"><h3>/whois</h3><p>View information about a member.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/help</h3>
-<p>Displays command information.</p>
-</div>
+<section class="command-group">
+  <h2>Roblox Integration</h2>
+  <div class="grid">
+    <article class="card command"><h3>/roblox user</h3><p>Look up a Roblox user.</p></article>
+    <article class="card command"><h3>/roblox group</h3><p>Look up a Roblox group.</p></article>
+    <article class="card command"><h3>/sync</h3><p>Synchronize Roblox information and Discord roles.</p></article>
+    <article class="card command"><h3>/rank set</h3><p>Set a member's Roblox group rank.</p></article>
+    <article class="card command"><h3>/rank promote</h3><p>Promote a member.</p></article>
+    <article class="card command"><h3>/rank demote</h3><p>Demote a member.</p></article>
+    <article class="card command"><h3>/bind add</h3><p>Add a Roblox rank-to-Discord role binding.</p></article>
+    <article class="card command"><h3>/bind remove</h3><p>Remove a role binding.</p></article>
+    <article class="card command"><h3>/bind list</h3><p>View configured role bindings.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/setup</h3>
-<p>Configure Piroma for your server.</p>
-</div>
+<section class="command-group">
+  <h2>Server Configuration</h2>
+  <div class="grid">
+    <article class="card command"><h3>/config group</h3><p>Configure the Roblox group.</p></article>
+    <article class="card command"><h3>/config verified-role</h3><p>Set the verified role.</p></article>
+    <article class="card command"><h3>/config nickname-template</h3><p>Configure automatic nicknames.</p></article>
+    <article class="card command"><h3>/config log-channel</h3><p>Set the logging channel.</p></article>
+    <article class="card command"><h3>/config ticket-category</h3><p>Set the ticket category.</p></article>
+    <article class="card command"><h3>/config ticket-staff-role</h3><p>Set the ticket staff role.</p></article>
+    <article class="card command"><h3>/config welcome-channel</h3><p>Set the welcome channel.</p></article>
+    <article class="card command"><h3>/config welcome-message</h3><p>Configure welcome messages.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/verification</h3>
-<p>Configure verification with Piroma for your server, (uses bloxlink)</p>
-</div>
+<section class="command-group">
+  <h2>Messaging &amp; Announcements</h2>
+  <div class="grid">
+    <article class="card command"><h3>/dm</h3><p>Send a direct message to a member.</p></article>
+    <article class="card command"><h3>/say</h3><p>Send a message as Piroma.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/topic-change</h3>
-<p>Requests a topic change in the immediate channel.</p>
-</div>
+<section class="command-group">
+  <h2>Moderation</h2>
+  <div class="grid">
+    <article class="card command"><h3>/warn</h3><p>Issue a member warning.</p></article>
+    <article class="card command"><h3>/warnings</h3><p>View warning history.</p></article>
+    <article class="card command"><h3>/clearwarnings</h3><p>Clear member warnings.</p></article>
+    <article class="card command"><h3>/timeout</h3><p>Temporarily restrict a member.</p></article>
+    <article class="card command"><h3>/untimeout</h3><p>Remove a timeout.</p></article>
+    <article class="card command"><h3>/kick</h3><p>Remove a member from the server.</p></article>
+    <article class="card command"><h3>/ban</h3><p>Ban a member.</p></article>
+    <article class="card command"><h3>/unban</h3><p>Remove a member's ban.</p></article>
+    <article class="card command"><h3>/purge</h3><p>Bulk-delete messages.</p></article>
+    <article class="card command"><h3>/slowmode</h3><p>Configure channel slowmode.</p></article>
+    <article class="card command"><h3>/lockdown</h3><p>Restrict channel messaging.</p></article>
+    <article class="card command"><h3>/unlock</h3><p>Restore channel messaging.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/ticket close</h3>
-<p>Closes the current ticket.</p>
-</div>
+<section class="command-group">
+  <h2>Blacklist Management</h2>
+  <div class="grid">
+    <article class="card command"><h3>/blacklist add</h3><p>Add a member to the blacklist.</p></article>
+    <article class="card command"><h3>/blacklist remove</h3><p>Remove a member from the blacklist.</p></article>
+    <article class="card command"><h3>/blacklist list</h3><p>View blacklisted members.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/warn</h3>
-<p>Warn a member.</p>
-</div>
+<section class="command-group">
+  <h2>Staff Records</h2>
+  <div class="grid">
+    <article class="card command"><h3>/note add</h3><p>Add an internal staff note.</p></article>
+    <article class="card command"><h3>/note list</h3><p>View staff notes.</p></article>
+    <article class="card command"><h3>/logs</h3><p>Access server activity logs.</p></article>
+    <article class="card command"><h3>/infraction</h3><p>View a member's infraction record.</p></article>
+    <article class="card command"><h3>/promotion</h3><p>Document a staff promotion.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/mute</h3>
-<p>Mute a member.</p>
-</div>
+<section class="command-group">
+  <h2>Ticket Management</h2>
+  <div class="grid">
+    <article class="card command"><h3>/ticket panel</h3><p>Create a ticket panel.</p></article>
+    <article class="card command"><h3>/ticket close</h3><p>Close a support ticket.</p></article>
+    <article class="card command"><h3>/ticket add</h3><p>Add a member to a ticket.</p></article>
+  </div>
+</section>
 
-<div class="card command">
-<h3>/ban</h3>
-<p>Ban a member.</p>
-</div>
-
-<div class="card command">
-<h3>/logs</h3>
-<p>View specific member logs.</p>
-</div>
-
-<div class="card command">
-<h3>More commands coming soon..</h3>
-<p>Please wait 1-3 business days for the rest of the commands!</p>
-</div>
-
-</div>
-
+<section class="command-group">
+  <h2>Utilities</h2>
+  <div class="grid">
+    <article class="card command"><h3>/server</h3><p>Display server information.</p></article>
+    <article class="card command"><h3>/ping</h3><p>Check bot latency.</p></article>
+    <article class="card command"><h3>/help</h3><p>Display available commands.</p></article>
+  </div>
+</section>
 </section>
 
 <footer>

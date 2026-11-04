@@ -694,6 +694,21 @@ ul {
     color: var(--muted);
 }
 
+.command-group {
+    margin-bottom: 48px;
+}
+
+.command-group h2 {
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: -0.03em;
+}
+
+#noCommandResults {
+    margin-bottom: 32px;
+}
+
 .premium-grid,
 .team-grid,
 .status-grid,
