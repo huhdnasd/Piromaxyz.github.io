@@ -25,7 +25,7 @@ export const DEFAULT_SITE_DATA = {
     reviews: []
 };
 
-export async function loadSiteData() {
+export async function loadSiteData({ fallbackOnError = true } = {}) {
     if (!isSupabaseConfigured) return DEFAULT_SITE_DATA;
 
     const { data, error } = await supabase
@@ -36,6 +36,7 @@ export async function loadSiteData() {
 
     if (error) {
         console.error("Could not load site settings:", error.message);
+        if (!fallbackOnError) throw error;
         return DEFAULT_SITE_DATA;
     }
 

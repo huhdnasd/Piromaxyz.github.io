@@ -124,11 +124,17 @@ async function showEditor(user) {
         return;
     }
 
-    const settings = await loadSiteData();
-    fillEditor(settings);
-    loginForm.hidden = true;
-    editor.hidden = false;
-    setMessage("Signed in. Changes publish to the public site when saved.");
+    try {
+        const settings = await loadSiteData({ fallbackOnError: false });
+        fillEditor(settings);
+        loginForm.hidden = true;
+        editor.hidden = false;
+        setMessage("Signed in. Changes publish to the public site when saved.");
+    } catch (error) {
+        loginForm.hidden = false;
+        editor.hidden = true;
+        setMessage(`Could not load site settings: ${error.message}`, true);
+    }
 }
 
 if (!isSupabaseConfigured) {
@@ -181,16 +187,27 @@ if (!isSupabaseConfigured) {
         const saveButton = editor.querySelector("button[type=submit]");
         saveButton.disabled = true;
         setMessage("Saving changes...");
-        const { error } = await supabase
-            .from("site_settings")
-            .update({ settings })
-            .eq("id", "public");
-        saveButton.disabled = false;
+        try {
+            const { data, error } = await supabase
+                .from("site_settings")
+                .update({ settings })
+                .eq("id", "public")
+                .select("id")
+                .single();
 
-        if (error) {
+            if (error) {
+                setMessage(`Could not save: ${error.message}`, true);
+                return;
+            }
+            if (!data) {
+                setMessage("Could not save: no settings row was updated. Check the Supabase admin policy and setup.", true);
+                return;
+            }
+            setMessage("Changes saved and published.");
+        } catch (error) {
             setMessage(`Could not save: ${error.message}`, true);
-            return;
+        } finally {
+            saveButton.disabled = false;
         }
-        setMessage("Changes saved and published.");
     });
 }
