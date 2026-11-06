@@ -9,6 +9,7 @@ const editor = document.querySelector("#admin-editor");
 const message = document.querySelector("#admin-message");
 const reviewList = document.querySelector("#admin-reviews");
 const statusOptions = ["Online", "Degraded", "Offline", "Maintenance"];
+const adminEmail = "tal.lewis30@gmail.com";
 
 for (const select of document.querySelectorAll(".admin-fields select")) {
     for (const status of statusOptions) {
@@ -113,7 +114,9 @@ function collectSettings() {
 }
 
 async function showEditor(user) {
-    if (user?.app_metadata?.role !== "admin") {
+    const isAdmin = user?.app_metadata?.role === "admin" ||
+        user?.email?.trim().toLowerCase() === adminEmail;
+    if (!isAdmin) {
         await supabase.auth.signOut();
         loginForm.hidden = false;
         editor.hidden = true;

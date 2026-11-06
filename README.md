@@ -22,6 +22,6 @@ This repository contains Piroma's website and live status and owner-dashboard se
 
 ## Admin site setup
 
-The admin page and public site read settings from the `public.site_settings` table in Supabase. To create it, run [`backend/migrations/002_site_settings.sql`](backend/migrations/002_site_settings.sql) in the Supabase SQL Editor for the project configured in `js/site-data.js`.
+The admin page and public site read settings from the `public.site_settings` table in Supabase. Run [`backend/migrations/002_site_settings.sql`](backend/migrations/002_site_settings.sql), then [`backend/migrations/003_site_settings_email_admin.sql`](backend/migrations/003_site_settings_email_admin.sql) in the Supabase SQL Editor for the project configured in `js/site-data.js`.
 
-The migration seeds the public settings row and permits public reads. Updates are restricted by row-level security to authenticated users whose `app_metadata.role` is `admin`. Set that app metadata on the admin account in Supabase before signing in. If the table was just created and the page still reports it is missing, refresh the Supabase API schema cache or wait briefly for it to reload.
+The migrations seed the public settings row and permit public reads. Updates are restricted by row-level security to authenticated users whose `app_metadata.role` is `admin`, or the account `tal.lewis30@gmail.com`. If the table was just created and the page still reports it is missing, refresh the Supabase API schema cache or wait briefly for it to reload.
