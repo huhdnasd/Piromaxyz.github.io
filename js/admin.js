@@ -192,20 +192,19 @@ if (!isSupabaseConfigured) {
                 .from("site_settings")
                 .update({ settings })
                 .eq("id", "public")
-                .select("settings")
-                .single();
+                .select("settings");
 
             if (error) {
                 setMessage(`Could not save: ${error.message}`, true);
                 return;
             }
-            if (!data) {
-                setMessage("Could not save: no settings row was updated. Check the Supabase admin policy and setup.", true);
+            if (!Array.isArray(data) || data.length !== 1) {
+                setMessage("Could not save: Supabase updated no settings row. Check that the public row exists and your account is allowed by the site_settings update policy.", true);
                 return;
             }
             if (typeof BroadcastChannel !== "undefined") {
                 const settingsChannel = new BroadcastChannel("piroma-site-settings");
-                settingsChannel.postMessage({ type: "published", settings: data.settings });
+                settingsChannel.postMessage({ type: "published", settings: data[0].settings });
                 settingsChannel.close();
             }
             setMessage("Changes saved. Open pages in this browser updated; reload the site on other devices.");
